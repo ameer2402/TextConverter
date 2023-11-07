@@ -31,13 +31,13 @@ export default function Ameer(props) {
        <label for="floatingTextarea2"></label>
      </div>
     </div>
-    <div className="button " style={{color:props.mode==='dark'?'white':'dark'}}>
-    <button type="button" className="btn btn-primary my-3" onClick={uppercase}>UpperCase</button>
-    <button type="button" className="btn btn-primary mx-5" onClick={lowecase}>LowerCase</button>
-    <button type="button" className="btn btn-primary my-3" onClick={reset}>Reset</button>
-    <button type="button" className="btn btn-primary my-3 mx-5" onClick={copy}>copy</button>
+    <div   className="button " style={{color:props.mode==='dark'?'white':'dark'}}>
+    <button disabled={text.length===0}  type="button" className="btn btn-primary my-3" onClick={uppercase}>UpperCase</button>
+    <button disabled={text.length===0}  type="button" className="btn btn-primary mx-5" onClick={lowecase}>LowerCase</button>
+    <button  disabled={text.length===0}  type="button" className="btn btn-primary my-3" onClick={reset}>Reset</button>
+    <button  disabled={text.length===0}  type="button" className="btn btn-primary my-3 mx-5" onClick={copy}>copy</button>
     <h4>Your Text Summary</h4>
-    <h6>words {text.length===0?0:text.split(" ").length}</h6>
+    <h6>words {text.split(" ").filter((element)=>{return element.length!==0}).length}</h6>
     <h6>characters {text.length}</h6>
     </div>
    
